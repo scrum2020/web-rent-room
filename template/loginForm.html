@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="loginForm.css" />
+    <script
+      src="https://kit.fontawesome.com/5307b7e9eb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      ,
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="centerBox">
+      <form class="mainForm">
+        <div class="form-group" style="width: 40vw;">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <div class="composeButton">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 19vw; margin-right: 2vw;"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="width: 19vw;"
+            onclick="Redirect()"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+      <script>
+        function Redirect() {
+          window.location = "register.html";
+        }
+      </script>
+    </div>
+  </body>
+</html>

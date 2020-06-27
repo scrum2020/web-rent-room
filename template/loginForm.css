@@ -1,0 +1,21 @@
+body{
+    background-image: url("../image/364.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.centerBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mainForm{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    justify-content: center;
+}
+.composeButton{
+    display: flex;
+}
