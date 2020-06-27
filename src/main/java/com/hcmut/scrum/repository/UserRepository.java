@@ -1,6 +1,5 @@
 package com.hcmut.scrum.repository;
 
-import com.hcmut.scrum.model.Account;
 import com.hcmut.scrum.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

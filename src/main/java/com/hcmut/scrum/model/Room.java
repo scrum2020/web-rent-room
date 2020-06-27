@@ -1,6 +1,5 @@
 package com.hcmut.scrum.model;
 
-
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,6 +9,11 @@ import java.io.Serializable;
 @Table(name = "room")
 @Data
 public class Room implements Serializable {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

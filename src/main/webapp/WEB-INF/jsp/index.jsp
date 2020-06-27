@@ -1,20 +1,53 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Html Form</title>
-</head>
-<body>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
 
-<div style="border:1px solid #D0D0D0;width:400px;padding:10px;">
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
 
-    <h1>${message}</h1>
-    <form name="loginForm" method="post" action="login">
-        Username: <input type="text" name="username"/> <br/>
-        Password: <input type="password" name="password"/> <br/>
-        <input type="submit" value="Login" />
-    </form>
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>API Table</h2>
 
-</div>
-
-</body>
+    <table>
+      <tr>
+        <th>api</th>
+        <th>method</th>
+        <th>param</th>
+        <th>return</th>
+      </tr>
+      <tr>
+        <td>/api</td>
+        <td>get</td>
+        <td>none</td>
+        <td>all API</td>
+      </tr>
+      <tr>
+        <td>/user/all</td>
+        <td>get</td>
+        <td>none</td>
+        <td>all user</td>
+      </tr>
+      <tr>
+        <td>/room/all</td>
+        <td>get</td>
+        <td>none</td>
+        <td>all room</td>
+      </tr>
+    </table>
+  </body>
 </html>

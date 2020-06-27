@@ -2,7 +2,6 @@ package com.hcmut.scrum.controller;
 
 import com.hcmut.scrum.model.Room;
 import com.hcmut.scrum.service.RoomService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

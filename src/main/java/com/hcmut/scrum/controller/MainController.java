@@ -1,14 +1,18 @@
 package com.hcmut.scrum.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class MainController {
 
 
-    @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
-    public String login(Model model) {
+    @GetMapping(value = { "/", "/api" })
+    public String index(Model model) {
+
+        String message = "Hello Spring Boot + JSP";
+        model.addAttribute("message", message);
 
         return "index";
     }
