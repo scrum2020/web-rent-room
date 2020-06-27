@@ -19,12 +19,13 @@ public class Room implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int ownerId;
+    private int ownerID;
+    private int distID;
     private int price;
     private int available;
-    private int cityId;
-    private int distId;
-    private String location;
+    private float size;
+    private String address;
     private String description;
+    private String image;
 
 }
