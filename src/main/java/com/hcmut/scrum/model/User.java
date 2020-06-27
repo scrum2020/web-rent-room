@@ -1,4 +1,4 @@
-package com.hcmut.scrum.entity;
+package com.hcmut.scrum.model;
 
 
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "user")
 @Data
-public class UserEntity implements Serializable {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

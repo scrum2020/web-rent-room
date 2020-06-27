@@ -1,9 +1,9 @@
 package com.hcmut.scrum.controller;
 
-import com.hcmut.scrum.entity.UserEntity;
-import com.hcmut.scrum.entity.UserRepository;
+import com.hcmut.scrum.model.User;
+import com.hcmut.scrum.service.AccountService;
+import com.hcmut.scrum.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,23 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping(value="/all")
-    public @ResponseBody Iterable<UserEntity> getAllUsers() {
-        return userRepository.findAll();
+    public @ResponseBody Iterable<User> getAllUser() {
+        return userService.findAllUser();
     }
 
-
-    @GetMapping(value="/allMail")
-    public @ResponseBody String[] getAllMail() {
-        return userRepository.getAllMail();
-    }
-
-    @GetMapping(value="/email")
-    public @ResponseBody String getU(
-            @RequestParam(value = "username") String username
-    ) {
-        return userRepository.getEmailByusername(username);
-    }
 }
