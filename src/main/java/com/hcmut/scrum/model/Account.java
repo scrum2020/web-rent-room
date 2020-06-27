@@ -12,7 +12,7 @@ public class Account implements Serializable {
 
     @Id
 //    @Column(name = "idAccount")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idAccount;
 
     private String firstName;
