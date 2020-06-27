@@ -24,10 +24,10 @@ public class UserController {
         return userRepository.getAllMail();
     }
 
-//    @GetMapping(value="/email")
-//    public @ResponseBody String getU(
-//            @RequestParam(value = "username") String username
-//    ) {
-//        return userRepository.getEmailByusername(username);
-//    }
+    @GetMapping(value="/email")
+    public @ResponseBody String getU(
+            @RequestParam(value = "username") String username
+    ) {
+        return userRepository.getEmailByusername(username);
+    }
 }
