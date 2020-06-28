@@ -80,6 +80,22 @@
         <td>int id, int role, String username, String email, String phone</td>
         <td>list user thoa man it nhat 1 dieu kien, cac param la khong bat buoc, vd /user/query?role=0 lay ra tat ca user co role=0</td>
     </tr>
+    <tr>
+        <td>6</td>
+        <td>/room/allDist</td>
+        <td>1.28.2</td>
+        <td>get</td>
+        <td>none</td>
+        <td>return all dist</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>/room/query</td>
+        <td>1.28.2</td>
+        <td>get</td>
+        <td>int id, int available, int dist, int owner, int minPrice, int maxPrice, int minSize, int maxSize</td>
+        <td>OR(id,available,dist,owner) -> OR(minPrice,maxPrice,minSize,maxSize) -> return, cac param la khong bat buoc, vd /room/query?dist=1</td>
+    </tr>
 </table>
 </body>
 </html>

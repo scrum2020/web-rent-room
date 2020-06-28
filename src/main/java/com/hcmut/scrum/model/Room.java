@@ -1,6 +1,7 @@
 package com.hcmut.scrum.model;
 
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.io.Serializable;
