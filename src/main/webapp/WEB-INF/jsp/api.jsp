@@ -72,6 +72,14 @@
         <td>long : id, string : token</td>
         <td>login web, return 200(http status ok)</td> 
     </tr>
+    <tr>
+        <td>5</td>
+        <td>/user/query</td>
+        <td>1.28.1</td>
+        <td>get</td>
+        <td>int id, int role, String username, String email, String phone</td>
+        <td>list user thoa man it nhat 1 dieu kien, cac param la khong bat buoc, vd /user/query?role=0 lay ra tat ca user co role=0</td>
+    </tr>
 </table>
 </body>
 </html>

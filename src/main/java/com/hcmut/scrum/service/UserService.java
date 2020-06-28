@@ -10,5 +10,7 @@ public interface UserService {
 
     List<User> findAllUser();
 
-     boolean login(String username, String password);
+    boolean login(String username, String password);
+
+    List<User> findUser(int id, int role, String username, String email, String phone);
 }
