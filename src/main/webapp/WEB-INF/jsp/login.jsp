@@ -25,14 +25,10 @@
         var userId = parseInt(response.authResponse.userID, 10);
         var accessToken = response.authResponse.accessToken;
 
-        var link =
-          "http://localhost:8080/user/login?id=" +
-          userId +
-          '&token="' +
-          accessToken +
-          '"';
+        url = "http://localhost:8080";
 
-        url = "http://localhost:8080/user/login";
+        var link =
+          url + "/user/login?id=" + userId + '&token="' + accessToken + '"';
 
         data = {
           id: userId,
@@ -97,28 +93,42 @@
           console.log("Successful login for: " + response.name);
           document.getElementById("status").innerHTML =
             "Thanks for logging in, " + response.name + "!";
-          document.getElementById("status1").innerHTML = "you can see all api with \"/api";
+          document.getElementById("status1").innerHTML =
+            'you can see all api with "/api';
           document.getElementById("status1").innerHTML = response.email;
-          document.getElementById("status2").src =
-            response.picture.data.url;
+          document.getElementById("status2").src = response.picture.data.url;
           console.log(response);
-          alert("Thanks for logging in, " + response.email + "!");
-          
+          // alert("Thanks for logging in, " + response.email + "!");
         });
       }
     </script>
 
-    <fb:login-button
-      style="padding: 50px;"
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=269598350963996&autoLogAppEvents=1"
+      nonce="1A233pII"
+    ></script>
+    <div
+      class="fb-login-button"
+      data-size="large"
+      data-button-type="login_with"
+      data-layout="rounded"
+      data-auto-logout-link="true"
+      data-use-continue-as="true"
+      data-width=""
       scope="public_profile,email"
       onlogin="checkLoginState();"
-    >
-    </fb:login-button>
+      style="padding: 100px;"
+    ></div>
 
-    
-    <div id="status"></div>
-    <div id="status1"></div>
-    <img id="status2" src="">
-    <div id="status3"></div>
+    <div style="padding-left: 150px;">
+      <div id="status"></div>
+      <div id="status1"></div>
+      <img id="status2" src="" />
+      <div id="status3"></div>
+    </div>
   </body>
 </html>
