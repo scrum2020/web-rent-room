@@ -25,14 +25,10 @@
         var userId = parseInt(response.authResponse.userID, 10);
         var accessToken = response.authResponse.accessToken;
 
-        var link =
-          "http://localhost:8080/user/login?id=" +
-          userId +
-          '&token="' +
-          accessToken +
-          '"';
+        url = "https://csrum-web-rent-room.herokuapp.com";
 
-        url = "http://localhost:8080/user/login";
+        var link =
+          url + "/user/login?id=" + userId + '&token="' + accessToken + '"';
 
         data = {
           id: userId,
@@ -97,13 +93,12 @@
           console.log("Successful login for: " + response.name);
           document.getElementById("status").innerHTML =
             "Thanks for logging in, " + response.name + "!";
-          document.getElementById("status1").innerHTML = "you can see all api with \"/api";
+          document.getElementById("status1").innerHTML =
+            'you can see all api with "/api';
           document.getElementById("status1").innerHTML = response.email;
-          document.getElementById("status2").src =
-            response.picture.data.url;
+          document.getElementById("status2").src = response.picture.data.url;
           console.log(response);
           alert("Thanks for logging in, " + response.email + "!");
-          
         });
       }
     </script>
@@ -115,10 +110,9 @@
     >
     </fb:login-button>
 
-    
     <div id="status"></div>
     <div id="status1"></div>
-    <img id="status2" src="">
+    <img id="status2" src="" />
     <div id="status3"></div>
   </body>
 </html>
