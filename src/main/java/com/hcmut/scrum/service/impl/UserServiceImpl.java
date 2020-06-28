@@ -25,5 +25,10 @@ public class UserServiceImpl implements UserService {
             return true;
         return false;
     }
+
+    @Override
+    public List<User> findUser(int id, int role, String username, String email, String phone){
+        return userRepository.findByIdOrRoleOrUsernameOrEmailOrPhone(id, role, username, email, phone);
+    }
 }
 
