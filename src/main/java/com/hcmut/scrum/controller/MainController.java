@@ -7,14 +7,22 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MainController {
 
-
     @GetMapping(value = { "/", "/api" })
-    public String index(Model model) {
+    public String api(Model model) {
 
         String message = "Hello Spring Boot + JSP";
         model.addAttribute("message", message);
 
-        return "index";
+        return "api";
+    }
+
+    @GetMapping(value = { "/login" })
+    public String login(Model model) {
+
+        String message = "Hello Spring Boot + JSP";
+        model.addAttribute("message", message);
+
+        return "login";
     }
 
 }

@@ -7,7 +7,8 @@ import java.util.List;
 
 @Repository
 public interface UserService {
+
     List<User> findAllUser();
 
+     boolean login(String username, String password);
 }
-
