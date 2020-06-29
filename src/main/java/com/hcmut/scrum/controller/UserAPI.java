@@ -1,6 +1,5 @@
 package com.hcmut.scrum.controller;
 
-import com.hcmut.scrum.model.AccFb;
 import com.hcmut.scrum.model.User;
 import com.hcmut.scrum.service.AccFbService;
 import com.hcmut.scrum.service.UserService;

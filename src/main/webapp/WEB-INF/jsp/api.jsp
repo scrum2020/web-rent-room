@@ -67,7 +67,7 @@
     <tr>
         <td>4</td>
         <td>/user/login</td>
-        <td>1.29.0</td>
+        <td>1.29.1</td>
         <td>post</td>
         <td>String id, String token</td>
         <td>login web, return 200(http status ok)</td> 
