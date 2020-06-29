@@ -22,17 +22,17 @@
       }
 
       function loginMyWeb(response) {
-        var userId = parseInt(response.authResponse.userID, 10);
+        var userId = response.authResponse.userID;
         var accessToken = response.authResponse.accessToken;
 
         url = "http://localhost:8080";
 
         var link =
-          url + "/user/login?id=" + userId + '&token="' + accessToken + '"';
+          url + "/user/login?id=" + userId + '&token=' + accessToken;
 
         data = {
-          id: userId,
-          token: accessToken,
+          // id: userId,
+          // token: accessToken,
         };
 
         fetch(link, {
@@ -64,7 +64,7 @@
       window.fbAsyncInit = function () {
         FB.init({
           appId: "269598350963996",
-          cookie: false, // Enable cookies to allow the server to access the session.
+          cookie: true, // Enable cookies to allow the server to access the session.
           xfbml: true, // Parse social plugins on this webpage.
           version: "v2.8", // Use this Graph API version for this call.
         });
@@ -101,6 +101,14 @@
           // alert("Thanks for logging in, " + response.email + "!");
         });
       }
+
+      function myLogout() {
+        FB.logout(function(response) {
+          // user is now logged out
+        //  send request logout to backend
+        });
+      }
+
     </script>
 
     <div id="fb-root"></div>
@@ -121,6 +129,7 @@
       data-width=""
       scope="public_profile,email"
       onlogin="checkLoginState();"
+      onlogout="myLogout();"
       style="padding: 100px;"
     ></div>
 

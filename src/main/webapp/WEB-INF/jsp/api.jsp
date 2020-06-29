@@ -59,7 +59,7 @@
     <tr>
         <td>3</td>
         <td>/login</td>
-        <td>1.28.0</td>
+        <td>1.29.0</td>
         <td>get</td>
         <td>none</td>
         <td>login with facebook fist, then F12 find "userId" and "accessToken" before test api 4</td> 
@@ -67,9 +67,9 @@
     <tr>
         <td>4</td>
         <td>/user/login</td>
-        <td>1.28.0</td>
+        <td>1.29.0</td>
         <td>post</td>
-        <td>long : id, string : token</td>
+        <td>String id, String token</td>
         <td>login web, return 200(http status ok)</td> 
     </tr>
     <tr>

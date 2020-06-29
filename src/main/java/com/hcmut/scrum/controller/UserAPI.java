@@ -1,6 +1,8 @@
 package com.hcmut.scrum.controller;
 
+import com.hcmut.scrum.model.AccFb;
 import com.hcmut.scrum.model.User;
+import com.hcmut.scrum.service.AccFbService;
 import com.hcmut.scrum.service.UserService;
 
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +14,11 @@ import java.util.List;
 public class UserAPI {
 
     private UserService userService = null;
+    private AccFbService accFbService;
 
-    public UserAPI(UserService userService) {
+    public UserAPI(UserService userService, AccFbService accFbService) {
         this.userService = userService;
+        this.accFbService = accFbService;
     }
 
     @GetMapping(value = "/all")
@@ -25,10 +29,12 @@ public class UserAPI {
 
     @PostMapping(value = "/login")
     @ResponseStatus
-    public int login(@RequestParam(value = "id") long id,
+    public int login(@RequestParam(value = "id") String id,
             @RequestParam(value = "token") String accessToken) {
-//        todo
-        return 200; //OK
+        if (accFbService.login(id, accessToken)){
+            return 200; //OK
+        };
+        return 002;
     }
 
 
