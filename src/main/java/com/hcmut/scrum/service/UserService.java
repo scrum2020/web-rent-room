@@ -13,4 +13,7 @@ public interface UserService {
     boolean login(String username, String password);
 
     List<User> findUser(int id, int role, String username, String email, String phone);
+
+//    boolean insertUserByFb(String id, String username, String email, String image);
+    boolean insertUserByFb(com.restfb.types.User userFb);
 }

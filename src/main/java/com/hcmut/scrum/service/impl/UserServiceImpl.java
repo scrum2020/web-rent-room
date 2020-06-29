@@ -32,5 +32,30 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByIdOrRoleOrUsernameOrEmailOrPhone(id, role, username, email, phone);
     }
 
+//    @Override
+//    public boolean insertUserByFb(String id, String username, String email, String image){
+//        try{
+//            userRepository.save(new User(id, username, email, image));
+//            return true;
+//        }
+//        catch (Exception e){
+//            System.out.println("Loi insert new acc web");
+//            System.out.println(e);
+//            return false;
+//        }
+//    }
+
+    @Override
+    public boolean insertUserByFb(com.restfb.types.User userFb){
+        try{
+            userRepository.save(new User(userFb));
+            return true;
+        }
+        catch (Exception e){
+            System.out.println("Loi insert new acc web");
+            System.out.println(e);
+            return false;
+        }
+    }
 }
 
