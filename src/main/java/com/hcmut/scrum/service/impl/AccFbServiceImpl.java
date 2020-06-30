@@ -54,8 +54,7 @@ public class AccFbServiceImpl implements AccFbService {
         }
         catch (Exception e){
             System.out.println("Loi insert new acc facebook");
-            System.out.println(e);
-            return false;
+            System.out.println(e.getMessage());
         }
         try{
             FacebookClient client= new DefaultFacebookClient(token, Version.VERSION_7_0);
@@ -65,7 +64,7 @@ public class AccFbServiceImpl implements AccFbService {
         }
         catch (Exception e){
             System.out.println("Loi insert new acc web");
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return false;
         }
     }

@@ -62,7 +62,7 @@
         <td>1.29.0</td>
         <td>get</td>
         <td>none</td>
-        <td>login with facebook fist, then F12 find "userId" and "accessToken" before test api 4</td> 
+        <td>return html, day khong phai api, font end hien thuc lai btn, login with facebook fist, then F12 find "userId" and "accessToken" before test api 4</td>
     </tr>
     <tr>
         <td>4</td>
