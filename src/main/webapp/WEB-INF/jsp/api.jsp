@@ -67,10 +67,10 @@
     <tr>
         <td>4</td>
         <td>/user/login</td>
-        <td>1.30.13</td>
+        <td>1.30.14</td>
         <td>post</td>
         <td>String id, String token</td>
-        <td>login web, return 200(http status ok)</td> 
+        <td>login web, return Or(200,420) = Or(HttpStatus.SC_OK,HttpStatus.SC_METHOD_FAILURE)</td>
     </tr>
     <tr>
         <td>5</td>
@@ -103,6 +103,30 @@
         <td>post</td>
         <td>int ownerId, int distId, int price, float size, String address, String description, String image</td>
         <td>param description,image la khong bat buoc, vd /room/insert?ownerId=1,distId=2,price=3,size=6.9,address="164 Ly Thuong Kiet, phuong 14"</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>/room/delete</td>
+        <td>1.30.14</td>
+        <td>delete</td>
+        <td>int roomId</td>
+        <td>return Or(200,420) = Or(HttpStatus.SC_OK,HttpStatus.SC_METHOD_FAILURE)</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>/room/rent</td>
+        <td>1.30.15</td>
+        <td>put</td>
+        <td>int userId, int roomId</td>
+        <td>Chua co bang du lieu luu rent, tam thoi chi set available 1->0, return Or(200,420)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>/room/edit</td>
+        <td>1.30.15</td>
+        <td>put</td>
+        <td>int roomId, int distId, int price, float size, String address, String description, String image</td>
+        <td>dang fail ve nha da fix sau, param description,image not require, return Or(200,420)</td>
     </tr>
 </table>
 </body>

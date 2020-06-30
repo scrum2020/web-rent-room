@@ -21,28 +21,26 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean login(String username, String password){
-        if(userRepository.findByUsernameAndPassword(username, password) != null)
+    public boolean login(String username, String password) {
+        if (userRepository.findByUsernameAndPassword(username, password) != null)
             return true;
         return false;
     }
 
     @Override
-    public List<User> findUser(int id, int role, String username, String email, String phone){
+    public List<User> findUser(int id, int role, String username, String email, String phone) {
         return userRepository.findByIdOrRoleOrUsernameOrEmailOrPhone(id, role, username, email, phone);
     }
 
     @Override
-    public boolean insertUserByFb(com.restfb.types.User userFb){
-        try{
+    public boolean insertUserByFb(com.restfb.types.User userFb) {
+        try {
             userRepository.save(new User(userFb));
             return true;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Loi insert new acc web");
             System.out.println(e);
             return false;
         }
     }
 }
-

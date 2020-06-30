@@ -7,6 +7,7 @@ import java.util.List;
 
 @Repository
 public interface AccFbService {
-    List<AccFb> findAllAcc();
+    List<AccFb> findAll();
+
     boolean login(String id, String token);
 }

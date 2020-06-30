@@ -25,7 +25,7 @@ public class AccFbServiceImpl implements AccFbService {
     }
 
     @Override
-    public List<AccFb> findAllAcc() {
+    public List<AccFb> findAll() {
         return accFbRepository.findAll();
     }
 
@@ -43,7 +43,7 @@ public class AccFbServiceImpl implements AccFbService {
 
     @Override
     public boolean login(String id, String token){
-        for (AccFb acc: findAllAcc()) {
+        for (AccFb acc: findAll()) {
             if (id.equals(acc.getId())){
                 acc.setToken(token);
                 update();

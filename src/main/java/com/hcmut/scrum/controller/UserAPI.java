@@ -4,6 +4,7 @@ import com.hcmut.scrum.model.User;
 import com.hcmut.scrum.service.AccFbService;
 import com.hcmut.scrum.service.UserService;
 
+import org.apache.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,24 +29,21 @@ public class UserAPI {
 
     @PostMapping(value = "/login")
     @ResponseStatus
-    public int login(@RequestParam(value = "id") String id,
-            @RequestParam(value = "token") String accessToken) {
-        if (accFbService.login(id, accessToken)){
-            return 200; //OK
-        };
-        return 002;
+    public int login(@RequestParam(value = "id") String id, @RequestParam(value = "token") String accessToken) {
+        if (accFbService.login(id, accessToken)) {
+            return HttpStatus.SC_OK;
+        }
+        ;
+        return HttpStatus.SC_METHOD_FAILURE;
     }
-
 
     @GetMapping(value = "/query")
     @ResponseBody
-    public List<User> getUsers(
-            @RequestParam(value = "id", required = false, defaultValue = "0") int id,
+    public List<User> getUsers(@RequestParam(value = "id", required = false, defaultValue = "0") int id,
             @RequestParam(value = "role", required = false, defaultValue = "9") int role,
             @RequestParam(value = "username", required = false, defaultValue = "") String username,
             @RequestParam(value = "email", required = false, defaultValue = "") String email,
-            @RequestParam(value = "phone", required = false, defaultValue = "") String phone
-    ){
+            @RequestParam(value = "phone", required = false, defaultValue = "") String phone) {
         return userService.findUser(id, role, username, email, phone);
     }
 }
