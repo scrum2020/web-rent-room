@@ -10,4 +10,3 @@ public interface DistService {
     List<Dist> findAllDist();
 
 }
-

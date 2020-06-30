@@ -19,4 +19,3 @@ public class DistServiceImpl implements DistService {
         return distRepository.findAll();
     }
 }
-
