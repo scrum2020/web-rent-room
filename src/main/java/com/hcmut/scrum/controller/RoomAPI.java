@@ -2,7 +2,6 @@ package com.hcmut.scrum.controller;
 
 import com.hcmut.scrum.model.Dist;
 import com.hcmut.scrum.model.Room;
-import com.hcmut.scrum.model.User;
 import com.hcmut.scrum.service.DistService;
 import com.hcmut.scrum.service.RoomService;
 import org.springframework.web.bind.annotation.*;
@@ -45,4 +44,23 @@ public class RoomAPI {
     ){
         return roomService.findRoom(id, available, dist, owner, minPrice, maxPrice, minSize, maxSize);
     }
+
+    @PostMapping(value = "/insert")
+    @ResponseStatus
+    public int insert(
+            @RequestParam(value = "ownerId") int owner,
+            @RequestParam(value = "distId") int dist,
+            @RequestParam(value = "price") int price,
+            @RequestParam(value = "size") float size,
+            @RequestParam(value = "address") String address,
+            @RequestParam(value = "description", required = false, defaultValue = "Chua co mo ta nao") String description,
+            @RequestParam(value = "image", required = false, defaultValue = "Chua co image") String image
+            ){
+        Room newRoom = new Room(owner,dist,price,size,address,description,image);
+        if (roomService.insert(newRoom)){
+            return 200;
+        }
+        return 404;
+    }
+
 }
