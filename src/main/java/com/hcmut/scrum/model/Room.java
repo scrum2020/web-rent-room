@@ -2,6 +2,7 @@ package com.hcmut.scrum.model;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,6 +10,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "room")
 @Data
+@NoArgsConstructor
 public class Room implements Serializable {
 
     /**
@@ -17,7 +19,6 @@ public class Room implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private int ownerID;
@@ -29,4 +30,15 @@ public class Room implements Serializable {
     private String description;
     private String image;
 
+    public Room(int owner, int dist, int price, float size, String address, String description, String image){
+        this.id = 10000*owner + 100*dist + address.hashCode()%100;
+        this.ownerID = owner;
+        this.distID = dist;
+        this.price = price;
+        this.available = 1;
+        this.size = size;
+        this.address = address;
+        this.description = description;
+        this.image = image;
+    }
 }

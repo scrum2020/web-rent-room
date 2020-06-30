@@ -67,7 +67,7 @@
     <tr>
         <td>4</td>
         <td>/user/login</td>
-        <td>1.29.1</td>
+        <td>1.30.13</td>
         <td>post</td>
         <td>String id, String token</td>
         <td>login web, return 200(http status ok)</td> 
@@ -95,6 +95,14 @@
         <td>get</td>
         <td>int id, int available, int dist, int owner, int minPrice, int maxPrice, int minSize, int maxSize</td>
         <td>OR(id,available,dist,owner) -> OR(minPrice,maxPrice,minSize,maxSize) -> return, cac param la khong bat buoc, vd /room/query?dist=1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>/room/insert</td>
+        <td>1.30.13</td>
+        <td>post</td>
+        <td>int ownerId, int distId, int price, float size, String address, String description, String image</td>
+        <td>param description,image la khong bat buoc, vd /room/insert?ownerId=1,distId=2,price=3,size=6.9,address="164 Ly Thuong Kiet, phuong 14"</td>
     </tr>
 </table>
 </body>

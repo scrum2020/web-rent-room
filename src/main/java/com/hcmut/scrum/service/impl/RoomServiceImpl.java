@@ -1,6 +1,7 @@
 package com.hcmut.scrum.service.impl;
 
 import com.hcmut.scrum.model.Room;
+import com.hcmut.scrum.model.User;
 import com.hcmut.scrum.repository.RoomRepository;
 import com.hcmut.scrum.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,17 @@ public class RoomServiceImpl implements RoomService {
         return roomResult;
     }
 
+    @Override
+    public boolean insert(Room newRoom){
+        try{
+            roomRepository.save(newRoom);
+            return true;
+        }
+        catch (Exception e){
+            System.out.println("Loi insert new room");
+            System.out.println(e);
+            return false;
+        }
+    }
 }
 
