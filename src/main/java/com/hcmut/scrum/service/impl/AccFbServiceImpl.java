@@ -46,7 +46,7 @@ public class AccFbServiceImpl implements AccFbService {
         for (AccFb acc: findAllAcc()) {
             if (id.equals(acc.getId())){
                 acc.setToken(token);
-                return update();
+                update();
             }
         }
         try{
