@@ -19,24 +19,26 @@ public class Room implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int ownerID;
+    private int available;
+    private String ownerID;
     private int distID;
     private int price;
-    private int available;
     private float size;
+    private String contact;
     private String address;
     private String description;
     private String image;
 
-    public Room(int owner, int dist, int price, float size, String address, String description, String image){
-        this.id = 10000*owner + 100*dist + address.hashCode()%100;
+    public Room(String owner, int dist, int price, float size, String contact, String address, String description, String image){
+        this.available = 1;
         this.ownerID = owner;
         this.distID = dist;
         this.price = price;
-        this.available = 1;
         this.size = size;
+        this.contact = contact;
         this.address = address;
         this.description = description;
         this.image = image;
