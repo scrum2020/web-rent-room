@@ -21,8 +21,9 @@
     </style>
 </head>
 <body>
-<h2>API Table</h2>
-
+<h1>API Table</h1>
+<h2>Version have 3 part (mounth-5).day.hour, ex: 2.1.9: API has created/changed on July 1</h2>
+<h3>From July, we restructured the system, some old API versions may be corrupted. If you have any problems, please contact <a href="https://www.facebook.com/datai99/">technical</a></h3>
 <table>
     <tr>
         <th>stt</th>
@@ -62,7 +63,7 @@
         <td>1.29.0</td>
         <td>get</td>
         <td>none</td>
-        <td>login with facebook fist, then F12 find "userId" and "accessToken" before test api 4</td> 
+        <td>return html, day khong phai api, font end hien thuc lai btn, login with facebook fist, then F12 find "userId" and "accessToken" before test api 4</td>
     </tr>
     <tr>
         <td>4</td>
@@ -99,10 +100,10 @@
     <tr>
         <td>8</td>
         <td>/room/insert</td>
-        <td>1.30.13</td>
+        <td>2.1.9</td>
         <td>post</td>
-        <td>int ownerId, int distId, int price, float size, String address, String description, String image</td>
-        <td>param description,image la khong bat buoc, vd /room/insert?ownerId=1,distId=2,price=3,size=6.9,address="164 Ly Thuong Kiet, phuong 14"</td>
+        <td>int ownerId, int distId, int price, float size, String contact, String address, String description, String image</td>
+        <td>param description,image not require, vd /room/insert?ownerId=1&distId=2&price=3&size=6.9&contact="phone: 0905 345670"&address="164 Ly Thuong Kiet phuong 14"</td>
     </tr>
     <tr>
         <td>9</td>

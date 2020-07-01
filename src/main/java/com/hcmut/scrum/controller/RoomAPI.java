@@ -45,12 +45,13 @@ public class RoomAPI {
 
     @PostMapping(value = "/insert")
     @ResponseStatus
-    public int insert(@RequestParam(value = "ownerId") int owner, @RequestParam(value = "distId") int dist,
+    public int insert(@RequestParam(value = "ownerId") String owner, @RequestParam(value = "distId") int dist,
             @RequestParam(value = "price") int price, @RequestParam(value = "size") float size,
+                      @RequestParam(value = "contact") String contact,
             @RequestParam(value = "address") String address,
             @RequestParam(value = "description", required = false, defaultValue = "Chua co mo ta nao") String description,
             @RequestParam(value = "image", required = false, defaultValue = "Chua co image") String image) {
-        Room newRoom = new Room(owner, dist, price, size, address, description, image);
+        Room newRoom = new Room(owner, dist, price, size, contact, address, description, image);
         if (roomService.insert(newRoom)) {
             return HttpStatus.SC_OK;
         }
