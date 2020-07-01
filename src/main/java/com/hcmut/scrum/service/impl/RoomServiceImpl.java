@@ -26,7 +26,7 @@ public class RoomServiceImpl implements RoomService {
     public List<Room> findRoom(int id, int available, int dist, int owner, int minPrice, int maxPrice, int minSize,
             int maxSize) {
         List<Room> filter = roomRepository.findByIdOrAvailableOrDistIDOrOwnerID(id, available, dist, owner);
-        List<Room> roomResult = new ArrayList<Room>();
+        List<Room> roomResult = new ArrayList<>();
         for (Room room : filter) {
             if (minPrice < room.getPrice() && room.getPrice() < maxPrice) {
                 if (minSize < room.getSize() && room.getSize() < maxSize) {
@@ -44,7 +44,7 @@ public class RoomServiceImpl implements RoomService {
             return true;
         } catch (Exception e) {
             System.out.println("Loi insert new room");
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -58,7 +58,7 @@ public class RoomServiceImpl implements RoomService {
                     return true;
                 } catch (Exception e) {
                     System.out.println("Loi delete room");
-                    System.out.println(e);
+                    System.out.println(e.getMessage());
                     return false;
                 }
             }
@@ -72,7 +72,7 @@ public class RoomServiceImpl implements RoomService {
             return true;
         } catch (Exception e) {
             System.out.println("Loi update room");
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -82,9 +82,7 @@ public class RoomServiceImpl implements RoomService {
         for (Room room : findAll()) {
             if (roomId == room.getId()) {
                 room.setAvailable(0);
-                if (update())
-                    return true;
-                return false;
+                return update();
             }
         }
         return false;
@@ -95,9 +93,7 @@ public class RoomServiceImpl implements RoomService {
         for (Room room : findAll()) {
             if (roomId == room.getId()) {
                 room.edit(editRoom);
-                if (update())
-                    return true;
-                return false;
+                return update();
             }
         }
         return true;
